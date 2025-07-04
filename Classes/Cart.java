@@ -74,7 +74,7 @@ public class Cart {
             }
             else {
                 Val -= quantity;
-                Products.get(pro.getProductName()).setQuantityOrdered(Val);
+                Products.get(pro.getProductName()).updateQuantityOrdered(quantity, -1);
                 pro.updateProductCount(quantity , 1);
             }
         }
