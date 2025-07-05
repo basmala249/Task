@@ -11,6 +11,7 @@ public class Main {
         Product p2 = new Product("tv", 1, 6, 12500.0 , 200.0);
         Product p3 = new Product("mobile", 2, 5, 8700.0 , 60.0);
         Product p4 = new Product("milk", 4, 2, 56.5 , 2.0);
+        p4.setExpire("12-7-2024");
         ManagerAccount managerAccount = new ManagerAccount();
         managerAccount.addAccess(0 , 12);
         managerAccount.addNewProduct(0 , p1 , store);
@@ -40,7 +41,7 @@ public class Main {
              boolean fo = false;
              if(pro.getDate() != ""){
                 LocalDate today = LocalDate.now();
-                DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                DateTimeFormatter f = DateTimeFormatter.ofPattern("d-M-yyyy");
                 LocalDate inpuDate = LocalDate.parse(pro.getDate() , f);
                 if(inpuDate.isAfter(today)){
                    fo = true;
